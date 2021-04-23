@@ -1,0 +1,34 @@
+<div class="container">
+    <mat-card>
+        <mat-form-field appearance="fill">
+            <mat-label>Where?</mat-label>
+            <mat-icon matSuffix>search</mat-icon>
+            <input matInput (change)="locationChange($event.target.value)">
+        </mat-form-field>
+    </mat-card>
+    <div class="spiner">
+        <mat-spinner *ngIf=showSpinner></mat-spinner>
+    </div>
+    <mat-card class="report" *ngIf=weather.name>
+        <mat-card-header>
+            <mat-card-title>
+                <h1>{{weather.temp | number }} °C</h1>
+            </mat-card-title>
+            <mat-card-title>
+                <h2>Weather in {{weather.name}}</h2>
+            </mat-card-title>
+        </mat-card-header>
+        <div class="flex">
+            <img src="{{weather.icon}}" alt="{{weather.description}}" class="icon" />
+            <div class="description">{{weather.description}}</div>
+        </div>
+        <div class="humidity">Humidity: {{weather.humidity}}%</div>
+        <div class="wind">Wind speed: {{weather.wind}} km/h</div>
+    </mat-card>
+    <mat-card *ngIf=errorMsg>
+        <mat-card-header>
+            <mat-card-title><span color="accent">Error</span></mat-card-title>
+        </mat-card-header>
+        <a mat-button color="warn" id="errorMsg" href="#">{{errorMsg}}</a>
+    </mat-card>
+</div>

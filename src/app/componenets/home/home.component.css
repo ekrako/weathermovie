@@ -1,0 +1,14 @@
+.container {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+}
+.mat-raised-button {
+    margin: 8px;
+}
+.button-text {
+    padding-right: 12px;
+}

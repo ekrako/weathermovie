@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Welcome to the weather movie app</h1>
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h3> What would like to do Toaday?</h3>
+            </mat-card-title>
+
+        </mat-card-header>
+
+        <a mat-raised-button color="primary" href="/weather" [routerLink]="['/weather']">
+            <span class="button-text">Check the weather</span>
+            <mat-icon>clouds</mat-icon>
+        </a>
+        <a mat-raised-button color="primary" href="/movies" [routerLink]="['/movies']">
+            <span class="button-text">look for movies</span>
+            <mat-icon>movie
+            </mat-icon>
+        </a>
+
+    </mat-card>
+</div>

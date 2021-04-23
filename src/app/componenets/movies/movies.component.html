@@ -1,0 +1,27 @@
+<div class="container">
+    <mat-card>
+
+        <mat-form-field appearance="fill">
+            <mat-label>What movie?</mat-label>
+            <mat-icon matSuffix>search</mat-icon>
+            <input matInput (change)="movieSearch($event.target.value)">
+        </mat-form-field>
+    </mat-card>
+    <div class="spiner">
+        <mat-spinner *ngIf=showSpinner></mat-spinner>
+    </div>
+    <mat-card *ngIf=movie>
+        <mat-card-header>
+            <mat-card-title>{{movie.Title}}</mat-card-title>
+            <mat-card-subtitle *ngIf="movie.Production">{{movie.Production}}</mat-card-subtitle>
+        </mat-card-header>
+        <img *ngIf="movie.Poster" mat-card-image src="{{movie.Poster}}" alt="poster of {{movie.Title}}">
+        {{movie | json}}
+    </mat-card>
+    <mat-card *ngIf=errorMsg>
+        <mat-card-header>
+            <mat-card-title><span color="accent">Error</span></mat-card-title>
+        </mat-card-header>
+        <a mat-button color="warn" id="errorMsg" href="#">{{errorMsg}}</a>
+    </mat-card>
+</div>
