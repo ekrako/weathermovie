@@ -3,9 +3,11 @@
 
         <mat-form-field appearance="fill">
             <mat-label>What movie?</mat-label>
-            <mat-icon matSuffix>search</mat-icon>
-            <input matInput (change)="movieSearch($event.target.value)">
+            <input matInput [(ngModel)]="searchTerm" (change)="movieSearch($event.target.value)">
         </mat-form-field>
+        <button mat-mini-fab color="primary" aria-label="search movie" (click)="movieSearch(searchTerm)">
+            <mat-icon>search</mat-icon>
+          </button>
     </mat-card>
     <div class="spiner">
         <mat-spinner *ngIf=showSpinner></mat-spinner>

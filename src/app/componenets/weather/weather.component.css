@@ -45,3 +45,9 @@
 .wind {
     margin: 0.3em 0.5em;
 }
+
+.mat-mini-fab {
+    margin-left: 1em;
+    margin-top: 1em;
+    vertical-align: top;
+}

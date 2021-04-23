@@ -8,7 +8,7 @@ import {WeatherService} from './../../services/weather.service';
 })
 export class WeatherComponent implements OnInit {
   weather: any = {};
-  str:string;
+  searchTerm:string;
   errorMsg:string;
   showSpinner:Boolean = false;
   constructor(private weatherService:WeatherService) { }
@@ -49,7 +49,8 @@ export class WeatherComponent implements OnInit {
     err=>{
       console.log(err)
       this.showSpinner=false;
-      this.errorMsg=err.error.message;
+      this.errorMsg = err.statusText;
+      if (err.error) this.errorMsg=err.error.message;
       this.weather={}
     })
   }

@@ -11,6 +11,7 @@ export class MoviesComponent implements OnInit {
   movie: any;
   str:string;
   errorMsg:string;
+  searchTerm:string;
   showSpinner:Boolean = false;
   ngOnInit(): void {}
   movieSearch(str:string){
@@ -26,6 +27,13 @@ export class MoviesComponent implements OnInit {
       }
       this.movie = null;
       this.errorMsg=res['Error']
+    },
+    err=>{
+      console.log(err)
+      this.showSpinner=false;
+      this.errorMsg = err.statusText;
+      if (err.error) this.errorMsg=err.error;
+      this.movie = null;
     })
   }
 

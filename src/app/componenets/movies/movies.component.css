@@ -6,18 +6,28 @@
     /* align-items: center;  */
     justify-content: center;
     text-align: center;
-    width:80%
+    width: 80%
 }
-.mat-card{
+
+.mat-card {
     margin-top: 1em;
 }
+
 .mat-form-field {
     width: 80%;
 }
-.mat-spinner{
+
+.mat-spinner {
     margin: auto;
     margin-top: 1em;
 }
-#errorMsg{
+
+#errorMsg {
     pointer-events: none;
+}
+
+.mat-mini-fab {
+    margin-left: 1em;
+    margin-top: 1em;
+    vertical-align: top;
 }
