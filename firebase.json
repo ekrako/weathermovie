@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/weathermovie",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
